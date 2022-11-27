@@ -23,7 +23,7 @@ PRIMARY KEY (emp_no, dept_no)
 );	
 	
 CREATE TABLE employees (
-emp_no INT, 
+emp_no VARCHAR(10), 
 emp_title_id VARCHAR(30), 
 birth_date DATE, 
 first_name VARCHAR(30), 
@@ -35,7 +35,7 @@ PRIMARY KEY (emp_no)
 );	
 
 CREATE TABLE salaries (
-emp_no INT, 
+emp_no VARCHAR(10), 
 salary INT,
 PRIMARY KEY (emp_no)
 );	

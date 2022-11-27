@@ -7,7 +7,7 @@ PRIMARY KEY(dept_no)
 );
 
 CREATE TABLE dept_emp (
-emp_no INT, 
+emp_no VARCHAR(10), 
 dept_no VARCHAR(10),
 FOREIGN KEY(emp_no) REFERENCES employees (emp_no), 
 FOREIGN KEY(dept_no) REFERENCES departments (dept_no),
@@ -16,7 +16,7 @@ PRIMARY KEY (emp_no, dept_no)
 	
 CREATE TABLE dept_manager (
 dept_no VARCHAR (10), 
-emp_no INT,
+emp_no VARCHAR(10),
 FOREIGN KEY(emp_no) REFERENCES employees (emp_no), 
 FOREIGN KEY(dept_no) REFERENCES departments (dept_no),
 PRIMARY KEY (emp_no, dept_no)
@@ -30,6 +30,7 @@ first_name VARCHAR(30),
 last_name VARCHAR(30), 
 sex VARCHAR(5), 
 hire_date DATE
+FOREIGN KEY()
 PRIMARY KEY (emp_no)
 );	
 

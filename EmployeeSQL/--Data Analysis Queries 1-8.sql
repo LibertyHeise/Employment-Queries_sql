@@ -3,20 +3,22 @@
 -- Data Analysis Q1: Join employees and salary
 SELECT DISTINCT
 employees.emp_no, 
-  employees.last_name, 
-  employees.first_name, 
-  employees.sex,
-  salaries.salary
+employees.last_name, 
+employees.first_name, 
+employees.sex,
+salaries.salary
 FROM employees
 INNER JOIN salaries ON
 employees.emp_no = salaries.emp_no;
 
 -- Data Analysis Q2: Query for hired in 1986
 SELECT DISTINCT
-last_name,first_name, hire_date
+last_name,
+first_name, 
+hire_date
 FROM employees
-WHERE hire_date = '1986'
-;
+WHERE hire_date BETWEEN '01/01/1986' AND '12/31/1986';
+
 
 -- Data Analysis Q3: Query for manager of dept, dept #, dept n, emp #, last, first
 SELECT DISTINCT
@@ -26,19 +28,6 @@ departments.dept_name,
 employees.emp_no,
 employees.last_name, 
 employees.first_name
-FROM departments
-INNER JOIN dept_emp ON
-departments.dept_no = dept_emp.dept_no
-INNER JOIN employees ON
-dept_emp.emp_no = employees.emp_no;
-
--- Data Analysis Q3: Query for manager of dept, dept #, dept n, emp #, last, first
-SELECT DISTINCT
-departments.dept_no,
-employees.emp_no,
-employees.last_name, 
-employees.first_name,
-departments.dept_name
 FROM departments
 INNER JOIN dept_emp ON
 departments.dept_no = dept_emp.dept_no
@@ -57,9 +46,6 @@ INNER JOIN dept_emp ON
 departments.dept_no = dept_emp.dept_no
 INNER JOIN employees ON
 dept_emp.emp_no = employees.emp_no;
-
-select *
-FROM titles
 
 -- Data Analysis Q5: Query for first, last, sex, Hercules, ln B
 SELECT DISTINCT
@@ -99,7 +85,3 @@ WHERE dept_name IN ('Sales','Development');
 SELECT last_name, COUNT ('last_name')
 FROM employees
 GROUP By last_name;
-
-
-
-
